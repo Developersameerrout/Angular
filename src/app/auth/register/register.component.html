@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="register" >
+                <!-- <input type="text" formControlName="Firstname">
+                <input type="text" formControlName="Lastname">
+                <input type="text" formControlName="Age"> -->
+                <div  formArrayName="hobby">
+                   <ng-container *ngFor="let hobby of register.get('hobby')['controls'];let i=index" [formGroupName]="i">
+                   
+                    <input type="text" formControlName="AgE">
+                    <input type="text" formControlName="FirstName">
+                   </ng-container>
+                </div>
+            </form>
+            <button type="button" (click)="registerFunction()">Submit</button>
+            <button type="button" (click)="Add()">Add</button>
+            
+        </div>
+    <!-- </div>{{this.register.get.value | json}} -->
+</div>
